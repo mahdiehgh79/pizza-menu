@@ -1,6 +1,52 @@
 import "./App.css";
 import "./index.css";
 
+const pizzaData = [
+  {
+    name: "Focaccia",
+    ingredients: "Bread with italian olive oil and rosemary",
+    price: 6,
+    photoName: "pizzas/focaccia.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Pizza Margherita",
+    ingredients: "Tomato and mozarella",
+    price: 10,
+    photoName: "pizzas/margherita.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Pizza Spinaci",
+    ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
+    price: 12,
+    photoName: "pizzas/spinaci.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Pizza Funghi",
+    ingredients: "Tomato, mozarella, mushrooms, and onion",
+    price: 12,
+    photoName: "pizzas/funghi.jpg",
+    soldOut: false,
+  },
+  {
+    name: "Pizza Salamino",
+    ingredients: "Tomato, mozarella, and pepperoni",
+    price: 15,
+    photoName: "pizzas/salamino.jpg",
+    soldOut: true,
+  },
+  {
+    name: "Pizza Prosciutto",
+    ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
+    price: 18,
+    photoName: "pizzas/prosciutto.jpg",
+    soldOut: false,
+  },
+];
+
+
 function App() {
   return (
     <div className="container">
@@ -15,7 +61,19 @@ const Menue = () => {
   return (
     <main className="menu">
       <h1>OUR MENUE</h1>
-      <Pizaa
+        <ul className="pizzas">
+        {pizzaData.map((pizza) => (
+          <Pizaa
+            name={pizza.name}
+            insides={pizza.ingredients}
+            image={pizza.photoName}
+            price={pizza.price}
+            key={pizza.name}
+          />
+        ))}
+      </ul>
+      
+{/*       <Pizaa
         name="Pizza Spinaci"
         insides="tomato"
         image="pizzas/spinaci.jpg"
@@ -26,7 +84,7 @@ const Menue = () => {
         insides="tomato onion"
         image="pizzas/salamino.jpg"
         price={12}
-      />
+      /> */}
     </main>
   );
 };
