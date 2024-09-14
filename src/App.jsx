@@ -123,7 +123,16 @@ const Footer = () => {
   // }
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()}footer is here ...{" "}
+       {warn ? (
+        <div className="order">
+          <p>we are open until {closehour}</p>
+          <button className="btn">order</button>
+        </div>
+      ) : (
+        <p>
+          we order food between {openhour} and {closehour}
+        </p>
+      )}
     </footer>
   );
 };
