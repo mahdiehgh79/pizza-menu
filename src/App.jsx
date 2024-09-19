@@ -91,7 +91,7 @@ const Menue = () => {
 
 const Pizaa = ({ name, image, insides, price }) => {
   return (
-    <div className="pizza">
+    <div className={`pizza ${soldOut ? "sold-out" : ""}`}>
       <img src={image} />
       <div>
         <h3>{name}</h3>
